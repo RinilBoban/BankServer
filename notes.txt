@@ -19,3 +19,10 @@ Basic Steps
     Put     - update data partially
     Patch   - update data completely
     Delete  - delete data completely
+
+9) HTTP Response Code
+    1xx - Information
+    2xx - Successful
+    3xx - Redirection
+    4xx - Client Error
+    5xx - Server Error

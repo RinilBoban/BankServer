@@ -53,7 +53,7 @@ app.listen(3000,() => {
 app.post('/register',(req,res)=>{
     console.log(req.body);
     const result = dataservices.register(req.body.acno,req.body.username,req.body.password)
-    res.json(result);
+    res.status(result.statusCode).json(result);
     // if(result){
     // res.send('Register Success')
     // }
@@ -63,6 +63,24 @@ app.post('/register',(req,res)=>{
 })
 
 // login request
+app.post('/login',(req,res)=>{
+    console.log(req.body);
+    const result = dataservices.login(req.body.acno,req.body.password)
+    res.status(result.statusCode).json(result);
+})
+
 // deposit request
+app.post('/deposit',(req,res)=>{
+    console.log(req.body);
+    const result = dataservices.deposit(req.body.acno,req.body.password,req.body.amount)
+    res.status(result.statusCode).json(result);
+})
+
 // withdraw request
+app.post('/withdraw',(req,res)=>{
+    console.log(req.body);
+    const result = dataservices.withdraw(req.body.acno,req.body.password,req.body.amount)
+    res.status(result.statusCode).json(result);
+})
+
 // delete request
