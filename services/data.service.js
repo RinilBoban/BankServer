@@ -1,3 +1,7 @@
+// import JWT
+const jwt = require('jsonwebtoken');
+
+// database
 userDetails={
     1000:{acno:1000, username:"Amal",password:123,balance:0,transaction:[]},
     1001:{acno:1001, username:"Anu",password:123,balance:0,transaction:[]},
@@ -30,10 +34,16 @@ userDetails={
       if(psw==userDetails[acno]['password']){
         currectuser=userDetails[acno]['username']
         currentacno=acno
+        const token = jwt.sign({  // to generate token
+          currentacno:acno},
+          'superkey2022'          // it will generate a number and it is assigned to the token
+        )
+
         return {
           status: 'true',
           statusCode: '200',
-          message: 'Login Success'
+          message: 'Login Success',
+          token:token
         }
       }
       else{
@@ -138,11 +148,21 @@ userDetails={
     }
   }
 
+  getTransaction=(acno)=>{
+    return  {
+      status: 'true',
+      statusCode: '200',
+      Transaction: userDetails[acno]['transaction']
+
+    }
+  }
+
 
   // exporting from here
   module.exports={
     register,
     login,
     deposit,
-    withdraw
+    withdraw,
+    getTransaction
   }

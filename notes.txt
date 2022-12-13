@@ -26,3 +26,23 @@ Basic Steps
     3xx - Redirection
     4xx - Client Error
     5xx - Server Error
+
+10) JWT Token
+
+    install command (Install JWT) : npm i jsonwebtoken
+    To generate a token - sign()
+11) Middleware
+
+    It comes in the middle of the request and response cycle of the nodejs execution process        
+    2 Types
+        1) Application specific middleware : for enitire application
+            req,res,next 
+
+            ex: const appMiddleware = (req,res,next) => {
+                console.log('Application specific middleware');
+                next();
+                }
+                app.use(appMiddleware)
+
+
+        2) Router specific middleware : validate token - verify() - jsonwebtoken
