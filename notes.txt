@@ -46,3 +46,29 @@ Basic Steps
 
 
         2) Router specific middleware : validate token - verify() - jsonwebtoken
+
+12) Database Integration
+        1) Install mongoose - npm i mongoose
+            mongoose is used to connect MongoDB with NodeJS
+
+13) Asychronous function resolving - promise
+
+        1) Resolve State - .then()
+        2) Reject state - .catch()
+
+14) CORS - Cross origin resource sharing
+
+        install cors - npm i cors
+
+        Used to exchange and communicate data between 2 ports
+        port 4200 (angular)----------------request------------> 3000(node)
+
+15) Asychronous Call - RxJs - (Reactive Extension for JavaScript)
+        We use it in TypeScript only. It is actually a library
+         In JavaScript, we use promise
+         TS - RxJs(library)
+
+         The method we use in Asychronous Call is :
+         1) Observable 
+                a) resolved - Subscribe()         (can resolve more request than promise)
+                b) reject - catch()
